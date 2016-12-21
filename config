@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Configuration file.
+
+# Defaults
+#
+# The following defaults can be overriden in every operation of the script here
+# or they can be modified via the command line switches: --config-only and
+# --non-local.
+INIT="true"
+DEV="true"
+
+# Constants
+readonly INFO_COLOUR="32"
+readonly ERROR_COLOUR="31"
+
+# Files and directories
+readonly NAME_DB="kontast-canonical-db.sql"
+readonly NAME_DIR_BACKUP="db"
+readonly NAME_DIR_DOCROOT="web"
+readonly NAME_DIR_CONFIG="config/sync"
+readonly FILE_TO_CHECK_INSTALLATION="index.php"
+readonly FILE_TO_CHECK_CONFIGURATION="core.extension.yml"
+
+# Paths
+readonly SCRIPTPATH=$( cd $(dirname $0) ; pwd -P)
+readonly REPOSITORY="${SCRIPTPATH}/.."
+readonly DB="${REPOSITORY}/${NAME_DIR_BACKUP}/${NAME_DB}"
+readonly DOCROOT="${REPOSITORY}/${NAME_DIR_DOCROOT}"
+readonly DRUPAL_CONFIG_DIR="${DOCROOT}/${NAME_DIR_CONFIG}"
+
+# Executables
+readonly DRUSH="${REPOSITORY}/vendor/drush/drush/drush"
+readonly CONSOLE="${REPOSITORY}/vendor/console"
+
+# Administrator's credentials
+readonly LOCAL_ADMIN_USER="admin"
+readonly LOCAL_ADMIN_PASSWORD="admin"
