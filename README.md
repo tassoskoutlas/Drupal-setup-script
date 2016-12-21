@@ -10,7 +10,9 @@ information please visit the
 
 ## Installation
 
-Place the content of the file within your Drupal installation, prefferably in a
+Download the files from https://github.com/tassoskoutlas/Drupal-setup-script/archive/master.zip
+
+Extract the contents of the zip within your Drupal installation, prefferably in a
 directory containing scripts (eg. `./scripts`).
 
 To tweak paths according to your use case edit `config` and set appropriate
