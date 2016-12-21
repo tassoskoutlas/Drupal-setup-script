@@ -53,6 +53,19 @@ To see all options invoke the build in help:
 drupal.sh -h
 ```
 
+This will result in the following help snippet
+
+```
+Usage: ./drupal.sh [options ...]
+
+-i, --install           Assmble the codebase according to the latest package.json.
+-u, --update            Update the codebase according to the latest package.json.
+-s, --setup             Setup Drupal with a canonical database for local-development (override defaults in config file).
+-c, --config-only       Don't use the canonical database (override defaults in config file).
+-nl, --non-local        Don't update the administrator's password (override defaults in config file).
+-h, --help              Display this help and exit.
+```
+
 ## Credits
 
 This code is developed and maintained by
