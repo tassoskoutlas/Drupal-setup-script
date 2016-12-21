@@ -323,6 +323,8 @@ drupal_install() {
     abort "Aborted -- You can not invoke install and update on the same command."
   fi
   abort "Aborted -- Installation function not yet implemented."
+  # TODO(tassos): once completed export the canonical database and place it in
+  # the appropriateplace.
 }
 
 # Updates a Drupal installation.
