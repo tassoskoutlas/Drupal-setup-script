@@ -24,7 +24,7 @@ text() {
   local colour="$2"
   local start="\033[${colour}m"
   local end="\033[0m"
-  echo -en ${start} ; echo -e ${message} ; echo -en ${end}
+  echo -en "${start}" ; echo -e "${message}" ; echo -en "${end}"
 }
 
 # Displays an informational message.
@@ -37,7 +37,7 @@ text() {
 #  None
 message() {
   local message="$1"
-  text "${message}" ${INFO_COLOUR}
+  text "${message}" "${INFO_COLOUR}"
 }
 
 # Exits with an error message and non zero status.
@@ -50,7 +50,7 @@ message() {
 #  None
 abort() {
   local message="$1"
-  text "${message}\n" ${ERROR_COLOUR} >&2
+  text "${message}\n" "${ERROR_COLOUR}" >&2
   show_help
   # TODO(tassos): pull out exit codes into globals (proposal #2).
   exit 1
@@ -165,7 +165,7 @@ drupal_check_if_file_exists() {
   local path="$1"
   local message="$2"
   if [[ ! -f ${path} ]]; then
-    abort ${message}
+    abort "${message}"
   fi
 }
 
@@ -188,7 +188,7 @@ drupal_check_if_installation_exists() {
     "${DOCROOT}/${FILE_TO_CHECK_INSTALLATION}" \
     "Aborted -- installation does not exist"
   message "Entering docroot ..."
-  cd ${DOCROOT}
+  cd "${DOCROOT}"
 }
 
 # Checks if configuration is exported.
@@ -233,7 +233,7 @@ drupal_restore_canonical_db() {
   message "Importing master database ..."
   # TODO(tassos): create a generalised version of this (drush sql-connect does
   # not work anymore) (issue #4).
-  mysql kontrast <  ${DB}
+  mysql kontrast <  "${DB}"
 }
 
 # Updates administrator's password.
@@ -252,7 +252,7 @@ drupal_restore_canonical_db() {
 #  None
 drupal_set_admin_password_to_admin() {
   message "Setting up administrator's password for local development ..."
-  ${DRUSH} upwd ${LOCAL_ADMIN_USER} --password="${LOCAL_ADMIN_PASSWORD}"
+  ${DRUSH} upwd "${LOCAL_ADMIN_USER}" --password="${LOCAL_ADMIN_PASSWORD}"
 }
 
 # Imports Drupal's configuration.
