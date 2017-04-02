@@ -23,7 +23,7 @@ readonly FILE_TO_CHECK_INSTALLATION="index.php"
 readonly FILE_TO_CHECK_CONFIGURATION="core.extension.yml"
 
 # Paths
-readonly SCRIPTPATH=$( cd $(dirname $0) ; pwd -P)
+readonly SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P)
 readonly REPOSITORY="${SCRIPTPATH}/.."
 readonly DB="${REPOSITORY}/${NAME_DIR_BACKUP}/${NAME_DB}"
 readonly DOCROOT="${REPOSITORY}/${NAME_DIR_DOCROOT}"
