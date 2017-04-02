@@ -76,11 +76,11 @@ main() {
 }
 
 # Path of the script
-SCRIPTPATH=$( cd $(dirname $0) ; pwd -P)
+SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P)
 
 # Source other files
-source ${SCRIPTPATH}/config
-source ${SCRIPTPATH}/functions.sh
+source "${SCRIPTPATH}"/config
+source "${SCRIPTPATH}"/functions.sh
 
 # Script
 main "$@"
